@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #coder: kodo no kami
-#data: 04/08/2017 ~ 06/08/2017
+#data: 04/08/2017
 #grupo: https://www.facebook.com/forumeof
 #forum: https://eofclub.in/forum\n
 #discord: https://discordapp.com/invite/cmzeMPv (kodo#0010)
@@ -19,12 +19,15 @@ my $tam = @ARGV;
 my ($arg_busca,$arg_num,$arg_pag);
 GetOptions("busca=s"=>\$arg_busca,"tel=s"=>\$arg_num, "page=s" => \$arg_pag);
 
-if($tam == 0){
+if($tam <= 1){
 	print "coder: kodo no kami\n" .
 	"grupo: https://www.facebook.com/forumeof\n" .
 	"forum: https://eofclub.in/forum\n" .
 	"discord: https://discordapp.com/invite/cmzeMPv (kodo#0010)\n".
-	"site: http://telenumeros.com\n\nsintaxe:\n    perl script.pl busca 1111111111\n\n";
+	"site: http://telenumeros.com\n\nsintaxe:\n    perl script.pl --tel 1111111111\n".
+	"    perl script.pl --busca \"barra mansa\"\n".
+	"    perl script.pl --busca \"flavio\" --page 10\n\n";
+	
 	exit(0);
 }
 
